@@ -16,7 +16,7 @@ export class PDFGenerator {
         margin: { top: "1in", right: "1in", bottom: "1in", left: "1in" },
       };
 
-      const pdf: Uint8Array = await Helper.getPDFBuffer(html, options);
+      const pdf = await Helper.getPDFBuffer(html, options);
       const base64 = Buffer.from(pdf).toString('base64');
 
       return {
@@ -28,7 +28,7 @@ export class PDFGenerator {
         isBase64Encoded: true,
       };
     } catch (error) {
-      console.error("Error : ", error);
+      console.error("Error on PDF generate operation : ", error);
       return {
         statusCode: 500,
         body: JSON.stringify({

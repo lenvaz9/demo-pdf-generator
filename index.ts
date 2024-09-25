@@ -1,5 +1,5 @@
 import { PDFGenerator } from "./src/PDFGenerator";
-import { getTemplate } from "./src/templates/radiologist-report-template";
+import { getTemplate } from "./templates/radiologist-report-template";
 
 const express = require("express");
 const app = express();

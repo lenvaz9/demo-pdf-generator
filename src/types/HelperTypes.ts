@@ -4,4 +4,4 @@
  * @param {any} options - Options to create a PDF file
  * @returns {any}
  */
-export type GetPDFBuffer = (html: string, options: any) => Promise<Buffer>;
+export type GetPDFBuffer = (html: string, options: any) => Promise<Uint8Array>;

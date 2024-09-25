@@ -4,7 +4,7 @@ import * as chromium from "chrome-aws-lambda";
 import { GetPDFBuffer } from "./types/HelperTypes";
 import { Browser } from "puppeteer-core";
 
-const isLocal = true; // TODO: remove this when deploying
+const isLocal = false; // TODO: when using in local mark it as true
 
 export class Helper {
   static getPDFBuffer: GetPDFBuffer = async (html: string, options: any) => {
