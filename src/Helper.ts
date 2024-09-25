@@ -26,7 +26,7 @@ export class Helper {
         waitUntil: "load",
       });
 
-      await page.setContent(html, { waitUntil: "networkidle0" });
+      await page.setContent(html, { waitUntil: 'domcontentloaded' });
       await loaded;
 
       return await page.pdf(options);
