@@ -1,6 +1,6 @@
 import { Helper } from "./Helper";
 import { GeneratorFunction } from "./types/GeneratorTypes";
-const fs = require('fs');
+// const fs = require('fs');
 
 
 export class PDFGenerator {
@@ -19,18 +19,18 @@ export class PDFGenerator {
       };
 
       const pdf = await Helper.getPDFBuffer(html, options);
-      // const base64 = pdf.toString('base64');
-      fs.writeFileSync('./files/demo2.pdf', pdf);
-      const _file  = fs.readFileSync('./files/demo2.pdf');
-      const _fileBase64 = _file.toString('base64');
+      const base64 = pdf.toString('base64');
+      // fs.writeFileSync('./files/demo2.pdf', pdf);
+      // const _file  = fs.readFileSync('./files/demo2.pdf');
+      // const _fileBase64 = _file.toString('base64');
 
       return {
         headers: {
           "Content-type": "application/pdf",
         },
         statusCode: 200,
-        body: _fileBase64,
-        // body: base64,
+        // body: _fileBase64,
+        body: base64,
         isBase64Encoded: true,
       };
     } catch (error) {
